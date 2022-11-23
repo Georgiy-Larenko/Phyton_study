@@ -2,16 +2,16 @@
 
 ##### Решение:
 
-# a = int(input('Введите число обозначающее день недели: '))
+a = int(input('Введите число обозначающее день недели: '))
 
-# if a == 6:
-#     print(f'Число \"{a}" является выходным. Это суббота')
-# elif a == 7:
-#     print(f'Число \"{7}" является выходным. Это воскресенье')
-# elif a > 0 and a < 6:
-#     print('Это будние дни')
-# else:
-#     print('Данное число не соответствует дню недели')
+if a == 6:
+    print(f'Число \"{a}" является выходным. Это суббота')
+elif a == 7:
+    print(f'Число \"{7}" является выходным. Это воскресенье')
+elif a > 0 and a < 6:
+    print('Это будние дни')
+else:
+    print('Данное число не соответствует дню недели')
 
 
 
@@ -42,20 +42,20 @@ else:
 
 ##### Решение:
 
-# x = int(input('Введите X: '))
-# y = int(input('Введите Y: '))
+x = int(input('Введите X: '))
+y = int(input('Введите Y: '))
 
-# if x != 0 and y != 0:
-#     if x > 0 and y > 0:
-#         print('I')
-#     elif x < 0 and y > 0:
-#         print('II')
-#     elif x < 0 and y < 0:
-#         print('III')
-#     elif x > 0 and y < 0:
-#         print('IV')
-# else:
-#     print('Ошибка. Число Х или Н равно 0 ')
+if x != 0 and y != 0:
+    if x > 0 and y > 0:
+        print('I')
+    elif x < 0 and y > 0:
+        print('II')
+    elif x < 0 and y < 0:
+        print('III')
+    elif x > 0 and y < 0:
+        print('IV')
+else:
+    print('Ошибка. Число Х или Н равно 0 ')
 
 
 
@@ -63,20 +63,20 @@ else:
 
 ##### Решение:
 
-# n = int(input('Введите номер четверти: '))
+n = int(input('Введите номер четверти: '))
 
-# if n > 0 and n < 5:
+if n > 0 and n < 5:
 
-#     if n == 1:
-#         print('X ; Y')
-#     elif n == 2:
-#         print('-X ; Y')
-#     elif n == 3:
-#         print('-X ; -Y')
-#     elif n == 4:
-#         print('X ; -Y')
-# else:
-#     print('No')
+    if n == 1:
+        print('X ; Y')
+    elif n == 2:
+        print('-X ; Y')
+    elif n == 3:
+        print('-X ; -Y')
+    elif n == 4:
+        print('X ; -Y')
+else:
+    print('No')
 
 
 
@@ -89,9 +89,9 @@ else:
 
 #####  Решение:
 
-# x1 = float(input("x1 - "))
-# y1 = float(input("y1 - "))
-# x2 = float(input("x2 - "))
-# y2 = float(input("y2 - "))
-# a = round(((x2 - x1) ** 2 + (y2 - y1) ** 2) ** (0.5), 2)
-# print(a)
+x1 = float(input("x1 - "))
+y1 = float(input("y1 - "))
+x2 = float(input("x2 - "))
+y2 = float(input("y2 - "))
+a = round(((x2 - x1) ** 2 + (y2 - y1) ** 2) ** (0.5), 2)
+print(a)
