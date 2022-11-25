@@ -86,11 +86,11 @@ import random
 
 n = int(input('Задайте длину списка: '))
 numbers = list(range(0, n))
-print(f' Начальный массив: {numbers}')
+print(f'Начальный массив: {numbers}')
 
 def shuffle_lst(lst):
     for i in lst:
-        lst[i] = random.randint(0, 100)
+        lst[i] = random.randint(0, 99)
 
 shuffle_lst(numbers)
 print(f'Перемешанный массив: {numbers}')
