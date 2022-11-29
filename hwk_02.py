@@ -82,15 +82,15 @@
 ###### Задание 5. Реализуйте алгоритм перемешивания списка.
 # Из библиотеки random использовать можно только randint
 
-import random
+# import random
 
-n = int(input('Задайте длину списка: '))
-numbers = list(range(0, n))
-print(f'Начальный массив: {numbers}')
+# n = int(input('Задайте длину списка: '))
+# numbers = list(range(0, n))
+# print(f'Начальный массив: {numbers}')
 
-def shuffle_lst(lst):
-    for i in lst:
-        lst[i] = random.randint(0, 99)
+# def shuffle_lst(lst):
+#     for i in lst:
+#         lst[i] = random.randint(0, 99)
 
-shuffle_lst(numbers)
-print(f'Перемешанный массив: {numbers}')
+# shuffle_lst(numbers)
+# print(f'Перемешанный массив: {numbers}')
