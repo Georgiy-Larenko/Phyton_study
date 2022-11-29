@@ -6,13 +6,13 @@
 
 lst = [int(i) for i in input("Введите числа через пробел: ").split()]
 print(f'Полученный список: {lst}')
-result_lst = []
+result = 0 
 
 for i in range(len(lst)):
-    if i%2 == 1:
-        result_lst.append(lst[i])
+    if i%2 != 0:
+        result += lst[i]
 
-print(f"Сумма элементов списка, стоящих на нечетных позициях: {sum(result_lst)}")
+print(f"Сумма элементов списка, стоящих на нечетных позициях: {result}")
 
 
 
@@ -22,6 +22,9 @@ print(f"Сумма элементов списка, стоящих на нече
 
 # - [2, 3, 4, 5, 6] => [12, 15, 16];
 # - [2, 3, 5, 6] => [12, 15]
+
+lst = [int(i) for i in input("Введите числа через пробел: ").split()]
+print(f'Полученный список: {lst}')
 
 
 

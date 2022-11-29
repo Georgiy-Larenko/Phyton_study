@@ -79,18 +79,20 @@
 
 
 
-###### Задание 5. Реализуйте алгоритм перемешивания списка.
+# ##### Задание 5. Реализуйте алгоритм перемешивания списка.
 # Из библиотеки random использовать можно только randint
 
-# import random
+from random import randint
 
-# n = int(input('Задайте длину списка: '))
-# numbers = list(range(0, n))
-# print(f'Начальный массив: {numbers}')
 
-# def shuffle_lst(lst):
-#     for i in lst:
-#         lst[i] = random.randint(0, 99)
+def mix_lst(lst):
+    for i in range(len(lst)):
+        new_i = randint(0, len(lst) - 1)
+        lst[i], lst[new_i] = lst[new_i], lst[i]
 
-# shuffle_lst(numbers)
-# print(f'Перемешанный массив: {numbers}')
+
+lst_ = [1, 2, 3, 4 ,5 ,6 ,7 ,8 ,9 ,0]
+
+print(f'Начальный массив: {lst_}')   
+mix_lst(lst_)
+print(f'Перемешанный массив: {lst_}')
