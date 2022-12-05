@@ -72,7 +72,7 @@ s = []
 while num != 0:
     s.append(str(num % 2))
     num //= 2
-print(s)
+print(''.join(s[::-1]))
 
 
 
