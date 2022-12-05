@@ -67,10 +67,10 @@ print(max(new_lst) - min(new_lst))
 
 
 num = int(input("Введите число: "))
-s = " "
+s = []
 
 while num != 0:
-    s = str(num % 2) + s
+    s.append(str(num % 2))
     num //= 2
 print(s)
 
