@@ -3,3 +3,15 @@
 # *Пример:* 
 
 # [1, 5, 2, 3, 4, 6, 1, 7] => [1, 2, 3] или [1, 7] или [1, 6, 7] и т.д.
+
+
+lst = [3, 1, 2, 3, 4, 6, 1, 7]
+
+def ups(lst):
+    result = [lst[0]]
+    for i in lst:
+        if i > max(result):
+            result.append(i)
+    return result
+    
+print(ups(lst))
