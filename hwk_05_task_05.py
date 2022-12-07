@@ -8,16 +8,16 @@
 # var 1.
 
 
-# lst = [1, 5, 2, 3, 4, 6, 1, 7]
+lst = [1, 5, 2, 3, 4, 6, 1, 7]
 
-# def ups(lst):
-#     result = [lst[0]]
-#     for i in lst:
-#         if i > max(result):
-#             result.append(i)
-#     return result
+def ups(lst):
+    result = [lst[0]]
+    for i in lst:
+        if i > max(result):
+            result.append(i)
+    return result
     
-# print(ups(lst))
+print(ups(lst))
 
 
 # var 2.
