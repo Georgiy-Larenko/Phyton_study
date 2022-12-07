@@ -23,7 +23,7 @@ value = 2021
 # Считаем очередность
 
 
-flag = randint(0,2)                         
+flag = randint(0, 2)                         
 
 if flag:
     print(f"Первый ходит {player1}")
@@ -35,17 +35,17 @@ else:
 
 
 def input_data(name):
-    x = int(input(f"{name}, введите количество конфет от 1 до 28: "))
+    x = int(input(f"{name}, сколько возьмете конфет: "))
 
     while x < 1 or x > 28:
-        x = int(input(f"{name}, введите корректное количество конфет: "))
+        x = int(input(f"{name}, введите корректное количество конфет (от 1 до 28): "))
     return x
 
 
 # Считаем кто сколько взял и остаток
 
 
-def p_print(name, k, counter, value):
+def attention(name, k, counter, value):
     print('')
     print(f"Ходил {name}, он взял {k}, теперь у него {counter}. Осталось {value} конфет.")
     print('')
@@ -56,18 +56,20 @@ count_pl2 = 0
 
 
 while value > 28:
+
     if flag:
         k = input_data(player1)
         count_pl1 += k
         value -= k
         flag = False
-        p_print(player1, k, count_pl1, value)
+        attention(player1, k, count_pl1, value)
+        
     else:
         k = input_data(player2)
         count_pl2 += k
         value -= k
         flag = True
-        p_print(player2, k, count_pl2, value)
+        attention(player2, k, count_pl2, value)
 
 if flag:
     print(f"{player1} выиграл ")
