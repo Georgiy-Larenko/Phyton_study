@@ -19,3 +19,11 @@ def del_words(text):
 
 result_text = del_words(text)
 print(f'Результат без слов, содержащих "абв": {result_text}')
+
+
+# var 3
+
+# text = "привет абв пока абвгд"                  # проверка без ввода
+text = input('Введите текст через пробел: ')
+res = " ".join(list(filter(lambda x: not "абв" in x, text.split())))
+print(f'Результат без слов, содержащих "абв": {res}')
