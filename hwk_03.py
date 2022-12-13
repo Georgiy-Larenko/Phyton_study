@@ -4,14 +4,22 @@
 
 # - [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
 
-lst = [2, 3, 5, 9, 3]
-result = 0
 
-for i in range(len(lst)):
-    if i % 2 != 0:
-        result += lst[i]
+# lst = [2, 3, 5, 9, 3]
+# result = 0
 
-print(f"Сумма элементов списка, стоящих на нечетных позициях: {result}")
+# for i in range(len(lst)):
+#     if i % 2 != 0:
+#         result += lst[i]
+
+
+# # Var 2
+
+
+# res = [+ lst[i] for i in range(len(lst)) if i % 2 != 0]
+# result = sum(res)
+
+# print(f"Сумма элементов списка, стоящих на нечетных позициях: {result}")
 
 
 
@@ -22,21 +30,40 @@ print(f"Сумма элементов списка, стоящих на нече
 # - [2, 3, 4, 5, 6] => [12, 15, 16];
 # - [2, 3, 5, 6] => [12, 15]
 
+
+# lst = [2, 3, 4, 5, 6]
+# lenght = len(lst)
+
+# def sum_lst(lst):
+
+#     if lenght % 2 != 0:
+#         l = lenght // 2 + 1
+#     else:
+#         lenght // 2
+
+#     for i in range(l):
+#         new_lst = lst[i] * lst[lenght - i - 1]
+#         print(new_lst, end = ' ')
+
+# sum_lst(lst)
+
+
+# Var 2
+
+
+def mult_lst(lst):
+    l = len(lst) // 2 + 1 if len(lst) % 2 != 0 else len(lst) // 2
+    new_lst = [lst[i]*lst[len(lst)-i-1] for i in range(l)]
+    print(new_lst)
+
+
 lst = [2, 3, 4, 5, 6]
-lenght = len(lst)
+mult_lst(lst)
 
-def sum_lst(lst):
+# OR
 
-    if lenght % 2 != 0:
-        l = lenght // 2 + 1
-    else:
-        lenght // 2
-
-    for i in range(l):
-        new_lst = lst[i] * lst[lenght - i - 1]
-        print(new_lst, end = ' ')
-
-sum_lst(lst)
+# lst = list(map(int, input("Введите числа через пробел: ").split()))
+# mult_lst(lst)
 
 
 
@@ -47,12 +74,12 @@ sum_lst(lst)
 # - [1.1, 1.2, 3.1, 5, 10.01] => 0.19
 
 
-lst = [1.1, 1.2, 3.1, 5, 10.01]
+# lst = [1.1, 1.2, 3.1, 5, 10.01]
 
-new_lst = [round(i % 1, 2) for i in lst if i % 1 != 0]  # Пока i в списке при условии что остаток от деления элемента i не равен нулю, 
-                                                        # то окугляем результат от деления до 2х знаков и заносим в новый список. 
+# new_lst = [round(i % 1, 2) for i in lst if i % 1 != 0]  # Пока i в списке при условии что остаток от деления элемента i не равен нулю, 
+#                                                         # то окугляем результат от деления до 2х знаков и заносим в новый список. 
 
-print(max(new_lst) - min(new_lst))
+# print(max(new_lst) - min(new_lst))
 
 
 
@@ -66,13 +93,13 @@ print(max(new_lst) - min(new_lst))
 
 
 
-num = int(input("Введите число: "))
-s = []
+# num = int(input("Введите число: "))
+# s = []
 
-while num != 0:
-    s.append(str(num % 2))
-    num //= 2
-print(''.join(s[::-1]))
+# while num != 0:
+#     s.append(str(num % 2))
+#     num //= 2
+# print(''.join(s[::-1]))
 
 
 
