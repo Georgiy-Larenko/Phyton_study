@@ -14,6 +14,7 @@
 #     x = x + 4 * ((-1) ** (count + 1)) / (2 * count - 1)
 # print(round(x, d))
 
+
 # # Для сравнения
 
 # print(round(pi, d))
@@ -55,7 +56,7 @@
 
 # - при [1, 1, 2, 3, 3, 4, 1, 5, 7, 8, 8, 7, 9]  ->   [2, 4, 5, 9]
 
-# lst = [1, 1, 2, 3, 3, 4, 1, 5, 7, 8, 8, 7, 9]
+lst = [1, 1, 2, 3, 3, 4, 1, 5, 7, 8, 8, 7, 9]
 
 
 # def get_unique(lst):
@@ -67,3 +68,15 @@
 
 
 # print(get_unique(lst))
+
+
+# Var 2
+
+
+# lst = list(map(int, input("Введите числа через пробел:\n").split()))
+print(f"Исходный список: {lst}")
+
+new_lst = []
+[new_lst.append(i) for i in lst if i not in new_lst]
+
+print(f"Список из неповторяющихся элементов: {new_lst}")
