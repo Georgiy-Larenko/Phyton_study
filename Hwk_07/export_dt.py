@@ -1,7 +1,7 @@
 
 
 def export_dt():
-    with open('Phonebook.csv', 'r', encoding='utf-8') as file:
+    with open('Homework\Hwk_07\Phonebook.csv', 'r', encoding='utf-8') as file:
         data = []
         t = []
         for line in file:
