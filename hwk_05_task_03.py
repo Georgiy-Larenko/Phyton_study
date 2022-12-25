@@ -1,23 +1,19 @@
+
 # 3 Создайте программу для игры в "Крестики-нолики".
 
 # Вариант интерфейса:
 
-#  1  |  2 | 3
-# --------------
-#  4  |  5 | 6
-# --------------
-#  7  |  8 | 9
 
-print("*" * 10, "Крестики - нолики", "*" * 10)
+import emoji
 
 board = list(range(1,10))
 
 
 def draw_board(board):
-    print("-" * 13)
+    print(emoji.emojize(":minus:" * 7))
     for i in range(3):
         print("|", board[0 + i * 3], "|", board[1 + i * 3], "|", board[2 + i * 3], "|")
-        print("-" * 13)
+        print(emoji.emojize(":minus:" * 7))
 
 
 def take_input(player_toker):
@@ -32,7 +28,7 @@ def take_input(player_toker):
             continue
 
         if player_anwser >= 1 and player_anwser <= 9:
-            if(str(board[player_anwser - 1]) not in "XO"):
+            if(str(board[player_anwser - 1]) not in ':cross_mark:' and ':hollow_red_circle:'):
                 board[player_anwser - 1] = player_toker
                 valid = True
             else:
@@ -56,12 +52,12 @@ def main(board):
     while not win:
         draw_board(board)
         if counter % 2 == 0: 
-            take_input("X")
+            take_input(emoji.emojize(':cross_mark:'))
         else:
-            take_input("O")
+            take_input(emoji.emojize(':hollow_red_circle:'))
         counter += 1
 
-        if counter > 4:
+        if counter > 3:
             tmp = check_win(board)
             if tmp:
                 print("The winner is: " + tmp)
@@ -69,9 +65,7 @@ def main(board):
                 break
 
         if counter == 9:
-            print(tmp, "Draw!")
+            print(tmp, "Ничья!")
             break
     draw_board(board)
 main(board)
-
-
