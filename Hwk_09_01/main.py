@@ -1,6 +1,8 @@
 import telebot
 from telebot import TeleBot, types
 from telebot import types
+import logger as lg
+import emoji
 
 TOKEN = ''
 
@@ -39,6 +41,7 @@ keyboard.row(telebot.types.InlineKeyboardButton(' ', callback_data = 'no'),
 
 @bot.message_handler(commands=['start'])
 def getMessage(message):
+    bot.send_message(message.chat.id, 'Привет, *' + message.from_user.first_name +'* !\nЭто стандартный калькулятор.\nДумаю в объяснении не нуждается.' + '\U0001f609' + '\nПриятного пользования.' + '\U0001f64f')
     global value
     if value == '':
         bot.send_message(message.from_user.id, '0', reply_markup = keyboard)
@@ -72,10 +75,11 @@ def callback_func(query):
 
         if value == '':
             bot.edit_message_text(chat_id = query.message.chat.id, message_id=query.message.id, text = '0', reply_markup=keyboard)
-
+            
         else:
             bot.edit_message_text(chat_id = query.message.chat.id, message_id=query.message.id, text = value, reply_markup=keyboard)
         old_value = value
 
 
-bot.polling()
+print('Calculator start')
+bot.infinity_polling()
