@@ -37,11 +37,9 @@ keyboard.row(telebot.types.InlineKeyboardButton(' ', callback_data='no'),
 def getMessage(message):
     global value
     if value == '':
-        bot.send_message(message.from_user.id,
-                         '0', reply_markup=keyboard)
+        bot.send_message(message.from_user.id, '0', reply_markup = keyboard)
     else:
-        bot.send_message(message.from_user.id,
-                         value, reply_markup=keyboard)
+        bot.send_message(message.from_user.id, value, reply_markup = keyboard)
 
 
 @bot.callback_query_handler(func = lambda call: True)
@@ -61,11 +59,9 @@ def callback_func(query):
         value += data
     if value != old_value:
         if value == '':
-            bot.edit_message_text(
-                chat_id=query.message.chat.id, message_id=query.message.id, text='0', reply_markup=keyboard)
+            bot.edit_message_text(chat_id = query.message.chat.id, message_id=query.message.id, text = '0', reply_markup=keyboard)
         else:
-            bot.edit_message_text(chat_id=query.message.chat.id,
-                                  message_id=query.message.id, text=value, reply_markup=keyboard)
+            bot.edit_message_text(chat_id = query.message.chat.id, message_id=query.message.id, text = value, reply_markup=keyboard)
         old_value = value
 
 
