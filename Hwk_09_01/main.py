@@ -39,16 +39,18 @@ keyboard.row(telebot.types.InlineKeyboardButton(' ', callback_data = 'no'),
              telebot.types.InlineKeyboardButton('=', callback_data = '='))
 
 @bot.message_handler(commands=['start'])
-def getMessage(message):
-    bot.send_message(message.chat.id, 'Привет, *' + message.from_user.first_name +'* !\nЭто стандартный калькулятор.\nДумаю в объяснении не нуждается.' + '\U0001f609' + '\nПриятного пользования.' + '\U0001f64f')
-    lg.logging.info('User *' + message.from_user.first_name + '* starting program')
+def getMessage(msg):
+    bot.send_message(msg.chat.id, 'Привет, *' + msg.from_user.first_name +'* !\nЭто стандартный калькулятор.\nДумаю в объяснении не нуждается.' + '\U0001f609' + '\nПриятного пользования.' + '\U0001f64f')
+    lg.logging.info(f'User * {msg.from_user.first_name} ({msg.from_user.id}) * starting program')
 
     global value
     if value == '':
-        bot.send_message(message.from_user.id, '0', reply_markup = keyboard)
+        bot.send_message(msg.from_user.id, '0', reply_markup = keyboard)
     else:
-        bot.send_message(message.from_user.id, value, reply_markup = keyboard)
-
+        bot.send_message(msg.from_user.id, value, reply_markup = keyboard)
+    lg.logging.info(f'User * {msg.from_user.first_name} ({msg.from_user.id}) * send: {keyboard.row}')   
+    
+    
 
 
 @bot.callback_query_handler(func = lambda call: True)
@@ -77,11 +79,11 @@ def callback_func(query):
     if value != old_value:
 
         if value == '':
-            bot.edit_message_text(chat_id = query.message.chat.id, message_id  =query.message.id, text = '0', reply_markup = keyboard)
+            bot.edit_message_text(chat_id = query.message.chat.id, message_id = query.message.id, text = '0', reply_markup = keyboard)
             
         else:
-            bot.edit_message_text(chat_id = query.message.chat.id, message_id=query.message.id, text = value, reply_markup = keyboard)
-        old_value = value
+            bot.edit_message_text(chat_id = query.message.chat.id, message_id = query.message.id, text = value, reply_markup = keyboard)
+        old_value = value  
 
 
 print('Calculator start')
