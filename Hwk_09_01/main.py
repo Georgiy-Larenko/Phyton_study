@@ -1,5 +1,5 @@
-import telebot
-from telebot import TeleBot, types
+
+from telebot import telebot, TeleBot, types
 from telebot import types
 import logger as lg
 import emoji
@@ -42,6 +42,7 @@ keyboard.row(telebot.types.InlineKeyboardButton(' ', callback_data = 'no'),
 def getMessage(message):
     bot.send_message(message.chat.id, 'Привет, *' + message.from_user.first_name +'* !\nЭто стандартный калькулятор.\nДумаю в объяснении не нуждается.' + '\U0001f609' + '\nПриятного пользования.' + '\U0001f64f')
     lg.logging.info('User *' + message.from_user.first_name + '* starting program')
+
     global value
     if value == '':
         bot.send_message(message.from_user.id, '0', reply_markup = keyboard)
@@ -51,6 +52,7 @@ def getMessage(message):
 
 
 @bot.callback_query_handler(func = lambda call: True)
+
 def callback_func(query):
 
     global value, old_value
@@ -75,10 +77,10 @@ def callback_func(query):
     if value != old_value:
 
         if value == '':
-            bot.edit_message_text(chat_id = query.message.chat.id, message_id=query.message.id, text = '0', reply_markup=keyboard)
+            bot.edit_message_text(chat_id = query.message.chat.id, message_id  =query.message.id, text = '0', reply_markup = keyboard)
             
         else:
-            bot.edit_message_text(chat_id = query.message.chat.id, message_id=query.message.id, text = value, reply_markup=keyboard)
+            bot.edit_message_text(chat_id = query.message.chat.id, message_id=query.message.id, text = value, reply_markup = keyboard)
         old_value = value
 
 
