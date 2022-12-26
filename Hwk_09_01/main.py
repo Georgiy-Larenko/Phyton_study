@@ -38,15 +38,16 @@ keyboard.row(telebot.types.InlineKeyboardButton(' ', callback_data = 'no'),
              telebot.types.InlineKeyboardButton(',', callback_data = '.'),
              telebot.types.InlineKeyboardButton('=', callback_data = '='))
 
-
 @bot.message_handler(commands=['start'])
 def getMessage(message):
     bot.send_message(message.chat.id, 'Привет, *' + message.from_user.first_name +'* !\nЭто стандартный калькулятор.\nДумаю в объяснении не нуждается.' + '\U0001f609' + '\nПриятного пользования.' + '\U0001f64f')
+    lg.logging.info('User *' + message.from_user.first_name + '* starting program')
     global value
     if value == '':
         bot.send_message(message.from_user.id, '0', reply_markup = keyboard)
     else:
         bot.send_message(message.from_user.id, value, reply_markup = keyboard)
+
 
 
 @bot.callback_query_handler(func = lambda call: True)
