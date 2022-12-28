@@ -54,7 +54,7 @@ def getMessage(msg):
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    doc = open(r'Homework\Hwk_09_01\loglist.log', 'rb')
+    doc = open(r"Homework\Hwk_09_01\loglist.log", 'rb')
     bot.send_document(message.from_user.id, doc)
     doc.close()
     
